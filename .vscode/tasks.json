@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "JC",
+            "command": "java",
+            "windows": {
+                "command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\javac.exe"
+            },
+            "args": [
+                "${file}"
+            ]
+        },
+        {
+            "label": "JR",
+            "command": "java",
+            "windows": {
+                "command": "C:\\Program Files\\Java\\jdk1.8.0_341\\bin\\java.exe"
+            },
+            "args": [
+                "${fileBasenameNoExtension}"
+            ]
+        },
+        {
+            "type": "java (buildArtifact)",
+            "targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+            "elements": [
+                "${compileOutput}",
+                "${dependencies}"
+            ],
+            "problemMatcher": [],
+            "label": "java (buildArtifact): KarateUdemy",
+            "group": "build"
+        },
+        {
+            "type": "java (build)",
+            "paths": [
+                "${workspace}"
+            ],
+            "isFullBuild": true,
+            "group": "build",
+            "problemMatcher": [],
+            "label": "java (build): Build Workspace",
+            "detail": "$(tools) Build all the Java projects in workspace."
+        },
+        {
+            "type": "java (buildArtifact)",
+            "targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+            "elements": [
+                "${compileOutput}",
+                "${dependencies}"
+            ],
+            "problemMatcher": [],
+            "label": "java (buildArtifact): KarateUdemy",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
